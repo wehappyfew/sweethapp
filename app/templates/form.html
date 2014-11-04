@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div id="form">
+<!--telling the form where to send user input-->
+<form method="post" action="/submit-form/"> 
+
+  <label>Friend's Phone Number (Only numbers allowed):</label>
+  <br>
+  <input type="text" name="number" size="15" maxLength="10" />
+  
+  <p>
+  <input type="submit" value="Send Message"  /> 
+  </p>
+  
+</form>  
+  <p><a href="/">return to home</a></p>
+</div>
+
+{% endblock %}

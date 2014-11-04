@@ -1,0 +1,11 @@
+setup and connect with GITHUb
+
+login-logout (stormpath)
+
+facelift with a free bootstrap template
+
+db for sms responces
+
+payment api integration
+
+payment plan

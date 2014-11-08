@@ -15,10 +15,22 @@
           <!-- Navigation -->
           <strong><nav>
           <ul class="menu">
-            <li><a href="{{ url_for('login') }}">  LogIn/Register</a></li>
-            <li><a href="{{ url_for('home')  }}">  Home          </a></li>
-            <li><a href="{{ url_for('form')  }}">  Send SMS      </a></li>
-            <li><a href="{{ url_for('about') }}">  About         </a></li>
+            <li>
+                {% if user.email %}
+                    <a href="{{ url_for('logout') }}">  Logout </a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">  Login </a>
+                {% endif %}
+            </li>
+            <li>
+                <a href="{{ url_for('home')  }}">  Home          </a>
+            </li>
+            <li>
+                <a href="{{ url_for('form')  }}">  Send SMS      </a>
+            </li>
+            <li>
+                <a href="{{ url_for('about') }}">  About         </a>
+            </li>
           </ul>
           </nav></strong>
 
@@ -28,22 +40,6 @@
     <div class="container">
       {% block content %}
       {% endblock %}
-    </div>
-
-
-    <div class=page>
-    <p>Test 2</p>
-      <div class=metanav>
-      {% if user.email %}
-        <a href="{{ url_for('logout') }}">log out</a>
-      {% else %}
-        <a href="{{ url_for('login') }}">log in</a>
-      {% endif %}
-      </div>
-      {% for message in get_flashed_messages() %}
-        <div class=flash>{{ message }}</div>
-      {% endfor %}
-      {% block body %}{% endblock %}
     </div>
      
   </body>
